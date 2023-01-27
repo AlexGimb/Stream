@@ -9,8 +9,8 @@ public class StreamApi {
 
 
     public static <T> void task1(Stream<? extends T> stream,
-                                  Comparator<? super T> order,
-                                  BiConsumer<? super T, ? super T> minMaxConsumer) {
+                                 Comparator<? super T> order,
+                                 BiConsumer<? super T, ? super T> minMaxConsumer) {
         minMaxConsumer.accept(
                 stream.min(order).orElse(null),
                 stream.max(order).orElse(null));
@@ -20,4 +20,3 @@ public class StreamApi {
         System.out.println(list.stream().filter(i -> i % 2 == 0).count());
     }
 }
-
